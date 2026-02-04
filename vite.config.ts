@@ -3,20 +3,13 @@ import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, '.', '');
-  return {
-    base: './', // <--- ADICIONE ESTA LINHA AQUI
-    server: {
-      port: 3000,
-      host: '0.0.0.0',
-    },
-    // ... restante do código
-//export default defineConfig(({ mode }) => {
-  //  const env = loadEnv(mode, '.', '');
-   // return {
-     // server: {
-       // port: 3000,
-        //host: '0.0.0.0',//
+   const env = loadEnv(mode, '.', '');
+    return {
+      server: {
+        plugins: [react()],
+  base: '/Rodadasorte.ao/', // Adicione esta linha com o nome do seu repositório entre barras
+       port: 3000,
+        host: '0.0.0.0',
       },
       plugins: [react()],
       define: {
